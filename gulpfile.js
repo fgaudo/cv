@@ -43,7 +43,6 @@ async function buildCss() {
   );
   const cssOutputDir = path.join(__dirname, "dist/css");
   const cssOutputFilePath = path.join(cssOutputDir, "style.css");
-  await mkdir(cssOutputDir, { recursive: true });
 
   const result = await processor.process(css, {
     from: cssFilePath,
@@ -53,8 +52,10 @@ async function buildCss() {
   await writeFile(cssOutputFilePath, result.css);
 }
 
-function clean() {
-  return deleteAsync(path.join(__dirname, "dist/*"));
+async function clean() {
+  await deleteAsync(path.join(__dirname, "dist/"));
+
+  await mkdir(path.join(__dirname, "dist/css"), { recursive: true });
 }
 
 const task = series(clean, parallel(buildHtml, buildCss));
