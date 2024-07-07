@@ -1,9 +1,16 @@
-<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <link rel="stylesheet" href="/css/style.css" />
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="{{css}}" />
   </head>
   <body>
+    <div>
+      <p>Francesco Gaudenzi - Software Developer</p>
+      <p>Phone: {{info.phone}}</p>
+      <p>Email: {{info.email}}</p>
+      <p>Living in: {{info.address}}</p>
+    </div>
     <ul>
       {{#each nextrek}}
         <li>{{{this}}}</li>
