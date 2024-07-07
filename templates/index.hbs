@@ -1,6 +1,13 @@
-<html>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <link rel="stylesheet" href="/css/style.css" />
   </head>
-  <body class="bg-red-950">  </body>
+  <body>
+    <ul>
+      {{#each nextrek}}
+        <li>{{{this}}}</li>
+      {{/each}}
+    </ul>
+  </body>
 </html>
